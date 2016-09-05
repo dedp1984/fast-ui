@@ -1,0 +1,10 @@
+<i ng-class="$getItemIcon(treeData)"  ng-click="$itemExpand(treeData)"></i>
+<span ng-click="$itemClicked(treeData)">
+    <input type="checkbox" ng-if="canChecked" ng-model="treeData.checked" ng-change="$itemChecked(treeData)"/>
+    {{treeData[nameField]}}
+</span>
+<ul  ng-show="treeData.$$expanded">
+    <li ng-repeat="child in treeData.children">
+        <tree tree-data="child" can-checked="canChecked" name-field="{{nameField}}"></tree>
+    </li>
+</ul>

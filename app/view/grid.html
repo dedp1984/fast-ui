@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div  class="row">
+        <div class="col-md-8" bs-modal="">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="button"  value="查询" ng-click="search()"/>
+        </div>
+        <div class="col-md-4">
+            <input type="button"  value="变更" ng-click="setGridData()"/>
+        </div>
+    </div>
+
+    <div id="alerts-container">
+
+    </div>
+
+    <div class="row">
+        <grid url="http://127.0.0.1:8080/carcredit/users" params='params' autoload=true>
+            <gridrow header="id" style="width:300px">
+                <a ng-href="{{data.name}}">{{data.name}}</a>
+            </gridrow>
+            <gridrow header="name">
+                {{data.passwd}}
+            </gridrow>
+            <gridrow header="passwd">
+                <input type="button" value="{{data.passwd}}"/>
+            </gridrow>
+        </grid>
+    </div>
+
+
+</div>
